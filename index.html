@@ -3,62 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PLACEHOLDER: Page Title — Your Name</title>
+    <title>Harshit Gupta</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chatbot.css">
+
   </head>
   <body>
-    <header>
-      <h1>PLACEHOLDER: Your Full Name</h1>
-      <p class="tagline">PLACEHOLDER: Short professional tagline</p>
+    <header class="site-header">
+      <h1>Tanvi Gupta</h1>
+      <p class="tagline">student of btech cse at jecrc </p>
     </header>
 
     <main>
-      <section id="about">
-        <h2>About</h2>
+      <section class="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
         <p>
-          PLACEHOLDER: Write a short introduction about yourself. Include
-          who you are, what you do, and what you are currently focused on.
+         i am  a student of btech cse with specialization in aiml at jecrc university currently in 2nd year
+        </p>
+        <p>
+          Away from the classroom i like to read books and explore new places.
         </p>
       </section>
 
-      <section id="skills">
-        <h2>Skills</h2>
+      <section class="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
         <ul>
+          
           <li>C++</li>
-    
-          <li>PLACEHOLDER: Skill 2</li>
-          <li>PLACEHOLDER: Skill 3</li>
-          <li>PLACEHOLDER: Skill 4</li>
+          <li>Python</li>
         </ul>
       </section>
 
-      <section id="projects">
-        <h2>Projects</h2>
+      <section id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
         <ul>
           <li>
-            <a href="https://PLACEHOLDER-project-one.example">
-              PLACEHOLDER: Project One Name
-            </a>
-            — PLACEHOLDER: One-sentence project description.
+            <a href="https://PLACEHOLDER-project-one.example.com">PLACEHOLDER Project One</a>
+            — PLACEHOLDER Brief description of project one.
           </li>
           <li>
-            <a href="https://PLACEHOLDER-project-two.example">
-              PLACEHOLDER: Project Two Name
-            </a>
-            — PLACEHOLDER: One-sentence project description.
+            <a href="https://PLACEHOLDER-project-two.example.com">PLACEHOLDER Project Two</a>
+            — PLACEHOLDER Brief description of project two.
           </li>
           <li>
-            <a href="https://PLACEHOLDER-project-three.example">
-              PLACEHOLDER: Project Three Name
-            </a>
-            — PLACEHOLDER: One-sentence project description.
+            <a href="https://PLACEHOLDER-project-three.example.com">PLACEHOLDER Project Three</a>
+            — PLACEHOLDER Brief description of project three.
+           
           </li>
         </ul>
       </section>
     </main>
+    <section id="weather">
+      <h2>Weather</h2>
+  
+      <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter a city"
+      >
+  
+      <button id="weatherButton">
+          Get Weather
+      </button>
+  
+      <div id="weatherResult">
+          Enter a city to see the weather.
+      </div>
+  </section>
 
-    <footer>
-      <p>PLACEHOLDER: Contact email or social profile</p>
+<section class="ai-chat">
+  <h2>Ask My AI Assistant</h2>
+
+  <p>
+    Ask questions about my portfolio.
+  </p>
+
+  <div id="chatMessages" aria-live="polite"></div>
+
+  <div class="chat-input-row">
+    <input
+      type="text"
+      id="userInput"
+      placeholder="Type your question..."
+    />
+
+    <button id="sendButton" type="button">
+      Send
+    </button>
+  </div>
+
+  <p id="chatStatus" role="status"></p>
+
+  <p class="chat-note">
+    AI chat works in the local classroom
+    demonstration only. The API key is
+    not published with this website.
+  </p>
+</section>
+
+
+    <footer class="site-footer">
+      <p>Email: <a href="mailto:tanvigupta142004@gmail.com">tanvigupta142007@gmail.com</a></p>
     </footer>
+    <button id="themeToggle">Switch to Dark Mode</button>
+    <script src="script.js"></script>
+    <script src="config.js"></script>
+    <script src="chatbot.js"></script> 
   </body>
 </html>
