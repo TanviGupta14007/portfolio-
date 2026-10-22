@@ -27,7 +27,7 @@ async function getWeather() {
 
     weatherResult.textContent = "Loading weather...";
 
-    const apiKey = "YOUR_API_KEY";
+    const apiKey = "3ad3d4adf2ef04b7ed55388341656d65";
 
     const url =
   `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -55,4 +55,17 @@ async function getWeather() {
 
         console.error(error);
     }
+ 
 }
+const projectSearch = document.getElementById("project-search");
+
+projectSearch?.addEventListener("input", () => {
+  const query = projectSearch.value.toLowerCase().trim();
+
+  document.querySelectorAll("#project-list li").forEach(project => {
+    const text = project.textContent.toLowerCase();
+    const tech = (project.dataset.tech || "").toLowerCase();
+
+    project.hidden = !text.includes(query) && !tech.includes(query);
+  });
+});
