@@ -11,14 +11,28 @@
   <body>
     <header class="site-header">
       <h1>Tanvi Gupta</h1>
-      <p class="tagline">student of btech cse at jecrc </p>
+      <p class="tagline">student of BTECH CSE at JECRC University </p>
     </header>
 
     <main>
+      <section class="profile-photo" aria-labelledby="photo-heading">
+        <h2 id="photo-heading">Profile Photo</h2>
+        <img
+          id="profilePreview"
+          class="profile-preview"
+          alt="Profile photo preview"
+          width="140"
+          height="140"
+          hidden
+        />
+        <label for="profileUpload" class="photo-upload-btn">Upload photo</label>
+        <input type="file" id="profileUpload" accept="image/*" />
+      </section>
+
       <section class="about" aria-labelledby="about-heading">
         <h2 id="about-heading">About</h2>
         <p>
-         i am  a student of btech cse with specialization in aiml at jecrc university currently in 2nd year
+         i am  a student of BTECH CSE with specialization in AIML with XEBIA at JECRC University currently in 2nd Year.
         </p>
         <p>
           Away from the classroom i like to read books and explore new places.
@@ -103,8 +117,22 @@
 
     <footer class="site-footer">
       <p>Email: <a href="mailto:tanvigupta142004@gmail.com">tanvigupta142007@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Add your LinkedIn URL</a></p>
     </footer>
     <button id="themeToggle">Switch to Dark Mode</button>
+    <script>
+      (function () {
+        var input = document.getElementById("profileUpload");
+        var preview = document.getElementById("profilePreview");
+        if (!input || !preview) return;
+        input.addEventListener("change", function () {
+          var file = input.files && input.files[0];
+          if (!file) return;
+          preview.src = URL.createObjectURL(file);
+          preview.hidden = false;
+        });
+      })();
+    </script>
     <script src="script.js"></script>
     <script src="config.js"></script>
     <script src="chatbot.js"></script> 
