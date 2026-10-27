@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     url.searchParams.set("appid", apiKey);
     url.searchParams.set("units", "metric");
     
-    ```
+    
     const response = await fetch(url);
     const data = await response.json();
     
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     }
     
     return res.status(200).json(data);
-    ```
+    
     
     } catch (error) {
     console.error("Weather API error:", error);
