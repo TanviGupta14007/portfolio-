@@ -19,14 +19,7 @@ function showChatMessage(role, text) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// Disable chat when local configuration is absent
-if (typeof CONFIG === "undefined" ||
-    !CONFIG.apiKey ||
-    CONFIG.apiKey === "YOUR_PRIVATE_GROQ_KEY") {
-  chatButton.disabled = true;
-  chatStatus.textContent =
-    "AI chat is available in the local demonstration only.";
-}
+// Chat requests are handled securely by the backend.
 
 async function sendChatMessage() {
   if (chatButton.disabled) return;
@@ -42,17 +35,12 @@ async function sendChatMessage() {
   chatStatus.textContent = "AI is thinking...";
 
   try {
-    const response = await fetch(
-      CONFIG.baseUrl.replace(/\/$/, "") +
-      "/chat/completions",
-      {
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer " + CONFIG.apiKey
         },
         body: JSON.stringify({
-          model: CONFIG.model,
           temperature: chatTemperature,
           messages: [
             {
